@@ -16,7 +16,10 @@ int main() {
     std::cout << "Minimum: " << minVal << std::endl;
     std::cout << "Maximum: " << maxVal << std::endl;
 
-    delete[] myArray; // Deallocate memory.
+    if (nullptr != myArray) {
+      delete[] myArray;
+      myArray = nullptr;
+    }
     
     return 0;
 }
