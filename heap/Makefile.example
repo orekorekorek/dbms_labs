@@ -1,0 +1,12 @@
+build_tests:
+	cmake -S . -B build && cmake --build build
+
+build_executable:
+	g++ -std=c++20 -o main.exe main.cpp
+
+run_tests:
+	./build/heap_test
+
+run_executable:
+	./main.exe
+

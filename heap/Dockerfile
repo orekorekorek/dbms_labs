@@ -2,9 +2,14 @@ FROM alpine:3.17.0 AS build
 
 WORKDIR /app
 
-# TODO specify versions
-RUN apk update && apk add --no-cache g++ make
+RUN apk update && apk add --no-cache git g++ make cmake
 
 COPY . .
 
-RUN g++ -std=c++20 main.cpp heap.cpp -o main.exe
+# BUILD TESTS
+
+RUN cmake -S . -B build && cmake --build build
+
+# build executable
+
+RUN g++ -std=c++20 -o main.exe main.cpp
