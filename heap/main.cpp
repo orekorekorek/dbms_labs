@@ -42,7 +42,6 @@ int main()
   myHeap.insert(MyData(10));
   myHeap.insert(MyData(3));
 
-  // Вывод кучи
   std::cout << "Heap: " << myHeap << std::endl;
 
   myHeap.remove();
