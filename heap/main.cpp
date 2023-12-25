@@ -20,18 +20,6 @@ public:
   {
     return value > other.value;
   }
-
-  friend std::ostream &operator<<(std::ostream &os, const MyData &data)
-  {
-    os << data.value;
-    return os;
-  }
-
-  friend std::istream &operator>>(std::istream &is, MyData &data)
-  {
-    is >> data.value;
-    return is;
-  }
 };
 
 int main()
