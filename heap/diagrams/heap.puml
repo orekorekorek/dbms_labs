@@ -1,0 +1,29 @@
+@startuml
+
+/' Objects '/
+
+namespace heap {
+	class Heap <template<typename T>> {
+		+Heap()
+		+getTop() : T& {query}
+		-isEmpty() : bool {query}
+		+operator>>(std::istream& is, Heap<T>& heap) : std :: istream&
+		+operator<<(std::ostream& os, const Heap<T>& heap) : std :: ostream&
+		-data : std::vector<std::shared_ptr<T>>
+		+begin() : typename std::vector<std::shared_ptr<T>>::iterator
+		+end() : typename std::vector<std::shared_ptr<T>>::iterator
+		-heapifyDown() : void
+		-heapifyUp() : void
+		+insert(const T& value) : void
+		+remove() : void
+	}
+}
+
+/' Dependency relationships '/
+
+heap.Heap <.. heap.Heap
+
+
+heap.Heap <.. heap.Heap
+
+@enduml
